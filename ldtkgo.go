@@ -10,7 +10,6 @@ import (
 	"image/color"
 	"io"
 	"io/fs"
-	"path/filepath"
 	"strconv"
 
 	"github.com/tidwall/gjson"
@@ -529,7 +528,6 @@ func Read(data []byte) (*Project, error) {
 
 		newTS := &Tileset{CustomData: map[int]string{}, Enums: map[int]EnumSet{}}
 		json.Unmarshal([]byte(tilesetDef.Raw), newTS)
-		newTS.Path = filepath.FromSlash(newTS.Path)
 		project.Tilesets = append(project.Tilesets, newTS)
 
 		ts := project.TilesetByIdentifier(tilesetDef.Get("identifier").String())
