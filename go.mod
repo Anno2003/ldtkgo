@@ -1,4 +1,4 @@
-module github.com/solarlune/ldtkgo
+module github.com/anno2003/ldtkgo
 
 go 1.16
 
